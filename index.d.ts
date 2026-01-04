@@ -1,10 +1,10 @@
 // Type definitions for ewelink-api
 // Definitions by: Alexander Méhes https://github.com/BMXsanko
 
-declare module 'ewelink-api' {
+declare module '@pipechela/ewelink-api' {
   export default eWelink;
 
-    class eWelink {
+  class eWelink {
     constructor({ }: { email: string; password: string; } | { at: string; } | { at: string; apiKey: string; });
     /**
     * Login into eWeLink API and get auth credentials.

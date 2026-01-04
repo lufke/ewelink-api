@@ -52,13 +52,16 @@ module.exports = {
     }
 
     if (this.devicesCache) {
-      return ChangeStateZeroconf.set({
-        url: this.getZeroconfUrl(device),
-        device,
-        params,
-        switches,
-        state: stateToSwitch,
-      });
+      const url = this.getZeroconfUrl(device)
+      if (url) {
+        return ChangeStateZeroconf.set({
+          url,
+          device,
+          params,
+          switches,
+          state: stateToSwitch,
+        });
+      }
     }
 
     const { APP_ID } = this;

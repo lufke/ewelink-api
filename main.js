@@ -102,6 +102,9 @@ class eWeLink {
    */
   getZeroconfUrl(device) {
     const ip = this.getDeviceIP(device);
+    if (!ip) {
+      return null;
+    }
     return `http://${ip}:8081/zeroconf`;
   }
 }
